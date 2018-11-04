@@ -35,8 +35,8 @@
 
         //Computer needs to randomly select an option from the "options" array, then mask it with _
 
-        var randomNumber = Math.floor(Math.random() * 28);
-        var hiddenOption = options[randomNumber];
+        var randomNum = Math.floor(Math.random() * 28);
+        var hiddenOption = options[randomNum];
         var guessStatus = [];
 
         console.log(hiddenOption);
@@ -44,12 +44,23 @@
                 guessStatus.push("-");
             }
 
-        document.write(guessStatus.join(' '));
+        document.getElementById("selection").innerHTML = guessStatus.join(' ');
 
+        //there needs to be a place to display all of the user guesses and a bank of answers displayed everytime the user makes a guess
         
+        var userGuesses = [];
 
+        document.onkeyup = function keyPress() {
+            var userInput = String.fromCharCode(event.keyCode).
+            toLowerCase(); 
+            userGuesses.push(userInput);
+            document.getElementById("guesses").innerHTML = userGuesses;
+        //Replace values of "-" in guessStatus every time a correct letter is guessed
+            for (var i=0; i < hiddenOption.length; i++) {
+                if (hiddenOption[i] === userInput) guessStatus.replace("-",userInput); 
+            }
 
-        //there needs to be a place to display all of the user guesses
+        }
         //each time a user makes a guess, the number of guesses left needs to decrease by 1
         //if the user guesses all the letters of the word within the guesses, increase the win counter by 1
         

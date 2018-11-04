@@ -1,6 +1,7 @@
-body {
-    /* background-image: url(../images/thumb-1920-205895.jpg); */
-    /* background-size: cover;  */
+#guessContainer {
+border: 2px solid grey;
 }
 
-/* p {color: white;} */
+#selectioncontainer {
+border: 2px solid grey;    
+}
