@@ -57,7 +57,11 @@
             document.getElementById("guesses").innerHTML = userGuesses;
         //Replace values of "-" in guessStatus every time a correct letter is guessed
             for (var i=0; i < hiddenOption.length; i++) {
-                if (hiddenOption[i] === userInput) guessStatus.replace("-",userInput); 
+                if (hiddenOption.charAt(i) === userInput) { 
+                console.log(hiddenOption.charAt(i));
+                console.log(userInput);
+                //try a replaceAt here
+                }
             }
 
         }
