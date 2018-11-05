@@ -1,7 +1,17 @@
-#guessContainer {
-border: 2px solid grey;
+body {
+    background-image: url(../images/thumb-1920-205895.jpg);
+    background-position: cover;
 }
 
-#selectioncontainer {
-border: 2px solid grey;    
+.container {
+    opacity: .75;
+}
+
+p,h5 {
+    color: white;
+    font-size: 28px;
+}
+
+#selection {
+    font-size: 50px;
 }

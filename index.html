@@ -10,25 +10,73 @@
 </head>
 <body>
 
-    <div id="game">
+        <!-- Header Code -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+                <div class="container p-0">
+                    <a class="navbar-brand bg-info p-3 text-light" href="#">
+                        <h2>Andrew Nelson</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./index.html">About<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./portfolio.html">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+            <br>
+            <br>
+
+    <!-- Main content code -->
+    <main>
+
+    <div class="container bg-secondary text-center" id="game">
         <p id="welcometext">Welcome Muggles, Press any key to get Started!</p>
         <p id="wins">Wins:</p>
         <p id="remguesses">Guesses Remaining:</p>
     </div>
 
-    <div id=selectioncontainer>
-        <p><h5>Guess the Harry Potter Themed Word!</h5></p>
+    <div class="container bg-secondary mb-3 text-center"id="selectioncontainer">
+        <p><h5 class="text-light">Guess the Harry Potter Themed Word!</h5></p>
         <p id="selection"></p>
     </div>
 
-    <div id="guessContainer">
-        <p><h5>Guessed letters</h5></p>
+    <div class="container bg-secondary mb-3 text-center" id="guessContainer">
+        <p><h5 class="text-light">Guessed letters</h5></p>
         <p id="guesses"></p>
     </div >
+
+</main>
     
 
-    <script src="./assets/javascript/game.js">
+    <script src="./assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
  
-    </script>
+
+<!-- Footer Content Code -->
+
+<footer class="footer fixed-bottom bg-dark pt-4 border-top border-info mt-3">
+        <div class="container">
+            <span class="text-muted text-light nav justify-content-center">
+                <h6>Copyright ©</h6>
+            </span>
+        </div>
+    </footer>
+    
 </body>
 </html>
