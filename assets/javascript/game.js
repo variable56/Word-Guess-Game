@@ -62,16 +62,15 @@
                 if (hiddenOption.charAt(i) === userInput) { 
                 console.log(hiddenOption.charAt(i));
                 console.log(userInput);
-                console.log(typeof(hiddenOption));
-                console.log(typeof(userInput));
-                
-                document.getElementById("selection").innerHTML = guessStatus[i] = userInput;
-                    
+            
+                    if (i !== -1) {
+                    guessStatus[i] = userInput;
+                    document.getElementById("selection").innerHTML = guessStatus.join(' '); 
+                    }
+
                 }
             }
-
         }
+
         //each time a user makes a guess, the number of guesses left needs to decrease by 1
         //if the user guesses all the letters of the word within the guesses, increase the win counter by 1
-        
-
