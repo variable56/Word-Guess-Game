@@ -84,7 +84,7 @@
             }
 
             //if they use all guesses they lose & the game resets
-            if (remGuesses < 1) {
+            if (remGuesses <= 0) {
                 
                 document.onkeyup = function reset() {
                 userGuesses = []
@@ -99,9 +99,10 @@
                 remGuesses = 15;
                 document.getElementById("remguesses").innerHTML = ("Guesses Remaining: " + remGuesses);
                 document.getElementById("guesses").innerHTML = userGuesses;
-                alert("Game Over, He who must not be named has prevailed...")
+                alert("Game Over. He who must not be named has prevailed...");
                 }
             }
+
              //if the user guesses all the letters of the word within the guesses, increase the win counter by 1
             
                 // if (hiddenOption = (guessStatus.join(''))) {
