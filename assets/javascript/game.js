@@ -31,7 +31,23 @@
         "gringotts"
         ]
 
-    
+        //function that resets the game if guesses run out
+
+        function reset() {
+            userGuesses = []
+            guessStatus = [];
+            randomNum = Math.floor(Math.random() * 28);
+            hiddenOption = options[randomNum];
+            console.log(hiddenOption);
+                for (var i = 0; i < hiddenOption.length; i++) {
+                    guessStatus.push("-");
+                }
+            document.getElementById("selection").innerHTML = guessStatus.join(' ');
+            remGuesses = 15;
+            document.getElementById("remguesses").innerHTML = ("Guesses Remaining: " + remGuesses);
+            document.getElementById("guesses").innerHTML = userGuesses;
+            return;
+            }
 
         //Computer needs to randomly select an option from the "options" array, then mask it with _
 
@@ -61,9 +77,21 @@
             document.getElementById("guesses").innerHTML = userGuesses;
             document.getElementById("welcometext").innerHTML = '';
 
-        //each time a user makes a guess, the number of guesses left needs to decrease by 1.
+        //each time a user makes a guess, the number of guesses left needs to decrease by 1 lose and reset if all words guessed.
             remGuesses--;
             document.getElementById("remguesses").innerHTML = ("Guesses Remaining: " + remGuesses);
+            if (remGuesses === 0) {
+                alert("Game Over. The deatheaters have prevailed. The word you were looking is: " + hiddenOption + ".");
+                reset();
+            }
+
+        //if the user guesses all the letters of the word within the guesses, increase the win counter by 1
+            
+            if (hiddenOption === (guessStatus.join(''))) {
+                wins++;
+                alert("Excelsior! You won!");
+                reset();
+            }
 
         //Replace values of "-" in guessStatus every time a correct letter is guessed
 
@@ -74,41 +102,6 @@
                     guessStatus[i] = userInput;
                     document.getElementById("selection").innerHTML = guessStatus.join(' '); 
                     }
-                    // var solution = (guessStatus.join())
-                    // if (solution = hiddenOption) {
-                    // console.log(solution)
-                    // console.log(typeof(solution))
-                    // wins++;
-                    // }
                 }
             }
-
-            //if they use all guesses they lose & the game resets
-            if (remGuesses <= 0) {
-                
-                document.onkeyup = function reset() {
-                userGuesses = []
-                guessStatus = [];
-                randomNum = Math.floor(Math.random() * 28);
-                hiddenOption = options[randomNum];
-                console.log(hiddenOption);
-                    for (var i = 0; i < hiddenOption.length; i++) {
-                        guessStatus.push("-");
-                    }
-                document.getElementById("selection").innerHTML = guessStatus.join(' ');
-                remGuesses = 15;
-                document.getElementById("remguesses").innerHTML = ("Guesses Remaining: " + remGuesses);
-                document.getElementById("guesses").innerHTML = userGuesses;
-                alert("Game Over. He who must not be named has prevailed...");
-                }
-            }
-
-             //if the user guesses all the letters of the word within the guesses, increase the win counter by 1
-            
-                // if (hiddenOption = (guessStatus.join(''))) {
-                //     wins++;
-                // }
-        
-        
-        
         }
